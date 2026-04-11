@@ -1,0 +1,25 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^#components/(.*)$",
+    "^#styles/(.*)$",
+    "^#assets/(.*)$",
+    "^#screens/(.*)$",
+    "^@/(.*)$",
+    "",
+    "^(?!.*[.](scss|css)$)[./].*$",
+    "",
+    "[.](scss|css)$"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "6.0.0",
+  "importOrderCaseSensitive": true
+}
