@@ -1,0 +1,47 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.BottomNavigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-background-elevated);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  z-index: 100;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+  }
+
+  &-label {
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  &-item_active {
+    color: var(--color-text-primary);
+
+    .BottomNavigation-icon {
+      opacity: 1;
+    }
+  }
+}

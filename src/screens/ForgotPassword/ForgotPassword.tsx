@@ -49,7 +49,7 @@ export const ForgotPassword: FC<WithClassName> = ({ className }) => {
         <Input
           placeholder={t('auth.forgotPassword.emailPlaceholder')}
           type="email"
-
+          autoComplete="email"
           isError={!!errors.email}
           {...register('email')}
         />

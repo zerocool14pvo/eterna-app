@@ -62,6 +62,7 @@ export const SignIn: FC<WithClassName> = ({ className }) => {
           <Input
             placeholder={t('auth.signIn.emailPlaceholder')}
             type="email"
+            autoComplete="email"
             isError={!!errors.email}
             {...register('email')}
           />
@@ -70,6 +71,7 @@ export const SignIn: FC<WithClassName> = ({ className }) => {
           <Input
             placeholder={t('auth.signIn.passwordPlaceholder')}
             type="password"
+            autoComplete="current-password"
             isError={!!errors.password}
             {...register('password')}
           />

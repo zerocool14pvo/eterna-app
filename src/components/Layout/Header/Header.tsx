@@ -10,9 +10,7 @@ import './Header.scss'
 
 const cnHeader = cn('Header')
 
-export interface IHeaderProps extends WithClassName { }
-
-export const Header: FC<IHeaderProps> = ({ className }) => {
+export const Header: FC<WithClassName> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleToggle = () => setIsMenuOpen((prev) => !prev)

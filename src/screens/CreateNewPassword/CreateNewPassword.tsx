@@ -46,6 +46,7 @@ export const CreateNewPassword: FC<WithClassName> = ({ className }) => {
           <Input
             placeholder={t('auth.createNewPassword.passwordPlaceholder')}
             type="password"
+            autoComplete="new-password"
             isError={!!errors.password}
             {...register('password')}
           />
@@ -54,6 +55,7 @@ export const CreateNewPassword: FC<WithClassName> = ({ className }) => {
           <Input
             placeholder={t('auth.createNewPassword.confirmPasswordPlaceholder')}
             type="password"
+            autoComplete="new-password"
             isError={!!errors.confirmPassword}
             {...register('confirmPassword')}
           />

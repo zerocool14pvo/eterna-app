@@ -8,9 +8,7 @@ import './Logo.scss'
 
 const cnLogo = cn('Logo')
 
-export interface ILogoProps extends WithClassName { }
-
-export const Logo: FC<ILogoProps> = ({ className }) => {
+export const Logo: FC<WithClassName> = ({ className }) => {
   return (
     <Link to="/" className={cnLogo(null, [className])}>
       Eterna
