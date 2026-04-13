@@ -1,0 +1,18 @@
+@use 'mixins' as *;
+
+.Card {
+  border-radius: 18px;
+  background: var(--fill-white-10);
+  backdrop-filter: blur(8px);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+
+  &_variant_default {
+    border: 1px solid rgba(255, 255, 255, 0.20); /* var(--Stroke-Gradient) */
+  }
+
+  &_variant_accent {
+    border: 2px solid #4D54D5; /* var(--Gradient-Blue-Purple) */
+  }
+}

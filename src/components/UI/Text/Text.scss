@@ -1,0 +1,38 @@
+@use 'mixins' as *;
+
+.Text {
+  @include text-body-s;
+  line-height: normal;
+
+  &_variant {
+    &_primary {
+      color: var(--color-white);
+    }
+    &_secondary {
+      color: var(--text);
+    }
+  }
+
+  &_size {
+    &_13 {
+      font-size: 13px;
+      letter-spacing: -0.408px;
+      font-feature-settings: 'case' on;
+    }
+    &_15 {
+      font-size: 15px;
+    }
+  }
+
+  &_align {
+    &_left {
+      text-align: left;
+    }
+    &_center {
+      text-align: center;
+    }
+    &_right {
+      text-align: right;
+    }
+  }
+}

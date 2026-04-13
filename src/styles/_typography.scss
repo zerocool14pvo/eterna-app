@@ -1,0 +1,55 @@
+// Глобальная типографика. Для кастомных блоков подключайте миксины из _mixins.scss.
+
+@use 'mixins' as *;
+
+.text-h1 {
+  @include text-h1;
+  margin: 2rem 0;
+
+  @media (max-width: 1024px) {
+    margin: 1.25rem 0;
+  }
+}
+
+.text-h2 {
+  @include text-h2;
+  margin: 0 0 0.5rem;
+}
+
+.text-h3 {
+  @include text-h3;
+  margin: 0 0 0.5rem;
+}
+
+.text-body-m {
+  @include text-body-m;
+  margin: 0;
+}
+
+.text-caption {
+  @include text-caption;
+}
+
+.text-body-l {
+  @include text-body-l;
+}
+
+.text-body-s {
+  @include text-body-s;
+}
+
+.text-display {
+  @include text-display;
+}
+
+.text-overline {
+  @include text-overline;
+}
+
+.text-code {
+  @include text-code;
+  display: inline-flex;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}

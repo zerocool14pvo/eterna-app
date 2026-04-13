@@ -1,0 +1,40 @@
+@use 'mixins' as *;
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 60px;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+
+
+
+
+
+  &-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    width: 100%;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-link {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    text-align: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--color-white);
+      border: none;
+    }
+  }
+}

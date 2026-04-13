@@ -1,0 +1,85 @@
+@use 'mixins' as *;
+
+.Input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+
+
+  &_error {
+    border-color: rgba(255, 84, 84, 0.20);
+    /* var(--Stroke-Gradient---red) */
+  }
+
+  // Размеры
+  &_size_xl {
+    height: 60px;
+  }
+
+  &_size_lg {
+    height: 52px;
+  }
+
+  &_size_md {
+    height: 48px;
+  }
+
+  &_size_sm {
+    height: 40px;
+  }
+
+  &_size_xs {
+    height: 32px;
+  }
+
+  &-field {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: var(--fill-white-10);
+    transition: all 0.2s ease-in-out;
+    padding: 16px 16px;
+    width: 100%;
+    height: 100%;
+    color: var(--Labels-Primary---Dark, #FFF);
+    text-align: center;
+    font-feature-settings: 'case' on;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    text-align: left;
+
+    &::placeholder {
+      color: var(--text);
+      /* --Labels-Secondary---Dark (#6D7388) */
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &_right {
+      right: 16px;
+    }
+
+    &_left {
+      left: 16px;
+    }
+
+    &_toggle {
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+  }
+}

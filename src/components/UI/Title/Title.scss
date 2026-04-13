@@ -1,0 +1,53 @@
+@use 'mixins' as *;
+
+.Title {
+  // Варианты типографики
+  &_variant_display {
+    @include text-display;
+  }
+  
+  &_variant_h1 {
+    @include text-h1;
+  }
+  
+  &_variant_h2 {
+    @include text-h2;
+  }
+  
+  &_variant_h4 {
+    color: var(--text-h);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.43px;
+    font-feature-settings: 'liga' off, 'clig' off;
+  }
+
+  // Цветовые варианты
+  &_color_primary {
+    color: var(--text-h); // Обычно #FFFFFF
+  }
+
+  &_color_secondary {
+    color: var(--text); // Обычно #6D7388
+  }
+
+  &_color_muted {
+    color: var(--text-muted); // Обычно #42425D
+  }
+
+  // Варианты выравнивания
+  &_align_left {
+    text-align: left;
+  }
+
+  &_align_center {
+    text-align: center;
+  }
+
+  &_align_right {
+    text-align: right;
+  }
+}

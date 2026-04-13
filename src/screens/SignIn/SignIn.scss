@@ -1,0 +1,75 @@
+@use 'mixins' as *;
+
+.SignIn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  gap: 28px;
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+
+  &-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &-link {
+    color: var(--Labels-Primary---Dark, #FFF);
+    text-align: right;
+    font-feature-settings: 'case' on;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+  }
+
+  &-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--Labels-Primary---Dark, #FFF);
+    text-align: center;
+    font-feature-settings: 'case' on;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+  }
+
+  &-accent {
+    color: var(--Labels-Primary---Dark, #FFF);
+    font-feature-settings: 'case' on;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

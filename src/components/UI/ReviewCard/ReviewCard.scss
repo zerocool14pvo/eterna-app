@@ -1,0 +1,128 @@
+@use 'mixins' as *;
+
+.ReviewCard {
+  display: flex;
+  width: 320px;
+  padding: 24px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 24px;
+  background: var(--fill-white-10);
+  box-sizing: border-box;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* gap 4 для verified, gap 8 общий */
+  }
+
+  &-name {
+    color: var(--text-h);
+    font-feature-settings: 'case' on;
+
+    /* Body/Regular - 15 */
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+  }
+
+  &-verified {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-green);
+    /* var(--Colors-Green) */
+
+      color: var(--text);
+
+    &Label {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.408px;
+      font-feature-settings: 'case' on;
+    }
+  }
+
+  &-date {
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    font-feature-settings: 'case' on;
+  }
+
+  &-text {
+    color: var(--text-h);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    font-feature-settings: 'case' on;
+    width: 100%;
+    text-align: left;
+    /* В TextArea было center, в отзыве естественнее left */
+  }
+
+  // Специфичное для alternate макета
+  &_layout_alternate {
+    .ReviewCard-info {
+      gap: 2px;
+    }
+  }
+
+  &_layout_minimal {
+    width: 100%;
+    background: var(--fill-white-6);
+    border-radius: 24px;
+    padding: 24px;
+    gap: 12px;
+
+    .ReviewCard-header {
+      gap: 12px;
+    }
+
+    .ReviewCard-info {
+      gap: 8px;
+    }
+
+    .ReviewCard-name {
+    }
+
+    .ReviewCard-text {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+    }
+  }
+}

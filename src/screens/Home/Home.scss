@@ -1,3 +1,16 @@
-.Home-Root {
-  display: block;
+@use 'mixins' as *;
+
+.Home {
+  &-root {
+    min-height: 100vh;
+    background: var(--color-background-black);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+
+  }
 }

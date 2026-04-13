@@ -1,0 +1,27 @@
+@use 'mixins' as *;
+
+.Field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+
+  &-label {
+    color: var(--text-h);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  &-error {
+    color: #FF3A3A; /* var(--Labels-Red) */
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    font-feature-settings: 'case' on;
+    text-align: center;
+  }
+}

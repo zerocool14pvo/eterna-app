@@ -1,0 +1,90 @@
+@use 'mixins' as *;
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+  /* Как в Figma для всех состояний */
+  font-family: var(--font-sans);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.43px;
+  color: var(--text-h);
+  /* Ожидается #FFFFFF */
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  outline: none;
+  padding: 10px;
+
+  // Размеры (Size variants)
+  &_size_xl {
+    height: 60px;
+  }
+
+  &_size_lg {
+    height: 52px;
+  }
+
+  &_size_md {
+    height: 48px;
+  }
+
+  &_size_sm {
+    height: 40px;
+    font-size: 15px;
+  }
+
+  &_size_xs {
+    height: 32px;
+    font-size: 13px;
+  }
+
+  // Цветовые схемы (Variants)
+  &_variant_primary {
+    background: var(--gradient-main-dark);
+    box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.25) inset, 0 0 12px 0 rgba(255, 255, 255, 0.25) inset;
+
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        background: linear-gradient(0deg, rgba(52, 24, 128, 0.20) 0%, rgba(52, 24, 128, 0.20) 100%), var(--gradient-main-dark);
+      }
+    }
+  }
+
+  &_variant_gray {
+    background: rgba(255, 255, 255, 0.08);
+    /* --Buttons-Disabled---Dark */
+    color: var(--color-white);
+    /* var(--Labels-Primary---Dark, #FFF) */
+    box-shadow: none;
+    cursor: pointer;
+    pointer-events: all;
+
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.12);
+      }
+    }
+  }
+
+  // Состояние disabled (применяется поверх любых вариантов)
+  &_disabled {
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.08);
+    /* --Buttons-Disabled---Dark */
+    color: var(--text-muted);
+    /* --Labels-Tertiary---Dark (#42425D) */
+    box-shadow: none;
+  }
+
+  &_full {
+    width: 100%;
+  }
+}

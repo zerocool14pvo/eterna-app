@@ -1,0 +1,37 @@
+@use 'mixins' as *;
+
+.TextArea {
+  display: flex;
+  width: 100%;
+  min-height: 120px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.20); /* var(--Stroke-Gradient) */
+  background: var(--fill-white-10);
+  transition: border-color 0.2s ease-in-out;
+  padding: 16px;
+
+  &_error {
+    border-color: rgba(255, 84, 84, 0.20); /* var(--Stroke-Gradient---red) */
+  }
+
+  &-field {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: var(--text-h);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    text-align: center;
+    resize: vertical;
+    font-feature-settings: 'case' on;
+
+    &::placeholder {
+      color: var(--text);
+    }
+  }
+}

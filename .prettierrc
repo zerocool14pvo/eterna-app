@@ -3,7 +3,9 @@
   "singleQuote": true,
   "trailingComma": "all",
   "printWidth": 80,
-  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports"
+  ],
   "importOrder": [
     "<BUILTIN_MODULES>",
     "",
@@ -19,7 +21,11 @@
     "",
     "[.](scss|css)$"
   ],
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderParserPlugins": [
+    "typescript",
+    "jsx",
+    "decorators-legacy"
+  ],
   "importOrderTypeScriptVersion": "6.0.0",
   "importOrderCaseSensitive": true
 }

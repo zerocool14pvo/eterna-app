@@ -1,0 +1,92 @@
+{
+  "review": {
+    "verified": "Verified user",
+    "unverified": "Unverified"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sign In",
+      "description": "Enter the email and password you've registered with on Eterna.",
+      "emailPlaceholder": "Email",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "footerText": "New user?",
+      "signUpLink": "Sign Up"
+    },
+    "forgotPassword": {
+      "title": "Forgot password?",
+      "description": "Enter your email, and we'll send you a link to reset your password.",
+      "emailPlaceholder": "Email",
+      "submit": "Next"
+    },
+    "createNewPassword": {
+      "title": "Create a new password",
+      "description": "Come up with a strong password to protect your account.",
+      "passwordPlaceholder": "Password",
+      "confirmPasswordPlaceholder": "Confirm password",
+      "submit": "Save"
+    }
+  },
+  "navigation": {
+    "reviews": "Reviews",
+    "howItWorks": "How it works",
+    "getStarted": "Get Started",
+    "signIn": "Sign In"
+  },
+  "home": {
+    "hero": {
+      "title": "Discover Your Archetypes and Inner Energy",
+      "subtitle": "Unlock insights about your personality, strengths, and life patterns.",
+      "cta": "Get Started"
+    },
+    "reviews": {
+      "title": "Here are a few stories from Eterna users:",
+      "emily": {
+        "name": "Emily",
+        "text": "I was surprised by how accurate the archetype insights were. It really helped me understand my strengths and the patterns behind my decisions."
+      },
+      "sophie": {
+        "name": "Sophie",
+        "text": "The analysis felt very personal and easy to understand. Learning about my archetypes made me reflect on my relationships and goals."
+      },
+      "daniel": {
+        "name": "Daniel",
+        "text": "This experience helped me see my personality in a new way. The archetype insights were clear, thoughtful, and surprisingly accurate."
+      },
+      "olivia": {
+        "name": "Olivia",
+        "text": "I loved discovering the deeper patterns behind my personality. It gave me a fresh perspective on my life choices."
+      }
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "step1": {
+        "title": "Create account",
+        "description": "Answer a few questions about yourself to help us design your profile."
+      },
+      "step2": {
+        "title": "Take the archetype quiz",
+        "description": "Take a short quiz to discover the archetypes and personality patterns that shape you."
+      },
+      "step3": {
+        "title": "Get your personalized insights",
+        "description": "We analyze your answers to reveal your key archetypes and deeper personality insights."
+      },
+      "step4": {
+        "title": "Explore your personal guide",
+        "description": "Access your profile anytime to explore your archetypes and personal growth insights."
+      }
+    },
+    "footer": {
+      "brand": "Eterna",
+      "cta": "Contact Us",
+      "links": {
+        "privacy": "Privacy Policy",
+        "billing": "Billing Terms",
+        "terms": "Terms of Use",
+        "moneyBack": "Money-Back Policy"
+      }
+    }
+  }
+}

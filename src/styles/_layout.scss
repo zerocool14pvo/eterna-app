@@ -1,0 +1,12 @@
+// Корневой layout приложения (#root), не привязанный к BEM-компонентам.
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}

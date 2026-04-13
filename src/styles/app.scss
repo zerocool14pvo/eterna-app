@@ -1,0 +1,6 @@
+// Единая точка входа глобальных стилей. Порядок важен.
+
+@use 'variables';
+@use 'reset';
+@use 'typography';
+@use 'layout';

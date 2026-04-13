@@ -1,0 +1,114 @@
+// Дизайн-токены (цвета, шрифты, тени).
+// После выгрузки из Figma (Eterna, node 168:2689) сверьте значения в Dev Mode.
+
+:root {
+  /* Base Palette (Figma 190:1462) */
+  --color-white: #ffffff;
+  --color-blue: #01dbd7;
+  --color-light-purple: #887ce8;
+  --color-purple: #bb34ff;
+  --color-red: #ff3a3a;
+  --color-yellow: #ffea32;
+  --color-yellow-alt: #ffb807; /* Yellow_2 */
+  --color-green: #1adc3a;
+  --color-background-black: #191935;
+  
+  /* Gradients */
+  --gradient-red: linear-gradient(90deg, #ff3a3a, #ff7b7b);
+  --gradient-yellow: linear-gradient(90deg, #ffea32, #fff59c);
+  --gradient-gold: linear-gradient(90deg, #ffe3ab, #f9e3b7);
+  --gradient-blue: linear-gradient(90deg, #01dbd7, #91fffd);
+  --gradient-purple: linear-gradient(90deg, #7134ff, #b192ff);
+  --gradient-main: linear-gradient(90deg, #4d54d5, #bc9ff9);
+  --gradient-main-dark: linear-gradient(90deg, #4d54d5, #bc9ff9);
+
+  /* Fills (Alpha) */
+  --fill-white-6: rgba(255, 255, 255, 0.06);
+  --fill-white-10: rgba(238, 238, 238, 0.1);
+  --fill-white-20: rgba(255, 255, 255, 0.2);
+
+  /* Semantic UI */
+  --bg: var(--color-background-black);
+  --text: #6d7388; /* Labels / Secondary - Dark */
+  --text-h: var(--color-white); /* Labels / Primary - Dark */
+  --text-muted: #42425d; /* Labels / Tertiary - Dark */
+  --border: #1c1c37; /* Stroke / Dark Blue */
+  
+  /* UI Legacy mapping (used by previous компоненты, чтобы ничего не упало) */
+  --code-bg: var(--fill-white-10);
+  --accent: var(--color-purple);
+  --accent-bg: rgba(187, 52, 255, 0.1);
+  --accent-border: rgba(187, 52, 255, 0.5);
+  --social-bg: var(--fill-white-6);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --font-sans: 'Montserrat', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Montserrat', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, Consolas, monospace;
+
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m-size);
+  line-height: var(--text-body-m-line);
+  letter-spacing: var(--text-body-m-tracking);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Числовые токены типографики (Figma px values) */
+  --text-display-size: 34px;
+  --text-display-line: 41.44px;
+  --text-display-tracking: 0.4px;
+
+  --text-h1-size: 28px;
+  --text-h1-line: 34.13px;
+  --text-h1-tracking: 0.4px;
+
+  --text-h2-size: 24px;
+  --text-h2-line: 29.25px;
+  --text-h2-tracking: 0.4px;
+
+  --text-h3-size: 22px;
+  --text-h3-line: 26.81px;
+  --text-h3-tracking: 0.38px;
+
+  --text-body-l-size: 18px;
+  --text-body-l-line: 21.94px;
+  --text-body-l-tracking: -0.43px;
+
+  --text-body-m-size: 17px;
+  --text-body-m-line: 22.0px;
+  --text-body-m-tracking: -0.43px;
+
+  --text-body-s-size: 15px;
+  --text-body-s-line: 18.28px;
+  --text-body-s-tracking: -0.408px;
+
+  --text-caption-size: 12px;
+  --text-caption-line: 14.62px;
+  --text-caption-tracking: -0.4px;
+
+  --text-button-size: 17px;
+  --text-button-line: 20.72px;
+  --text-button-tracking: -0.43px;
+
+  --text-overline-size: 11px;
+  --text-overline-line: 14px;
+  --text-overline-tracking: 0.88px;
+
+  --text-code-size: 15px;
+  --text-code-line: 20.25px;
+
+  @media (max-width: 1024px) {
+    --text-display-size: 28px;
+    --text-h1-size: 24px;
+    --text-h2-size: 22px;
+    --text-h3-size: 20px;
+    font-size: var(--text-body-m-size);
+  }
+}
+

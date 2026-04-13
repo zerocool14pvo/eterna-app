@@ -1,0 +1,15 @@
+.Rating {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* По макету gap 2 */
+
+  &-star {
+    color: var(--color-yellow-alt); /* --Yellow_2 (из нашего сета в _variables) или просто #FFB807 */
+    transition: opacity 0.2s;
+
+    &:not(&_active) {
+      opacity: 0.2;
+      color: var(--text);
+    }
+  }
+}

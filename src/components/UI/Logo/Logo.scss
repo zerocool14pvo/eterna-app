@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+
+.Logo {
+  color: var(--text-h);
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+
+  /* Headline/Semibold - 18 */
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.43px;
+  text-decoration: none;
+}
