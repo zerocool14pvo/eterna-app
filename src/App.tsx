@@ -1,7 +1,7 @@
 import { cn } from '@bem-react/classname'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
-import { AuthLayout, MainLayout } from '#components'
+import { AuthLayout, ProfileLayout } from '#components'
 import { Billing } from '#screens/Billing'
 import { CreateNewPassword } from '#screens/CreateNewPassword'
 import { ForgotPassword } from '#screens/ForgotPassword'
@@ -32,7 +32,7 @@ export const App = () => (
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="create-new-password" element={<CreateNewPassword />} />
       </Route>
-      <Route path="/app" element={<MainLayout />}>
+      <Route path="/app" element={<ProfileLayout />}>
         <Route index element={<Navigate to="energy" replace />} />
         <Route path="energy" element={<DailyEnergy />} />
         <Route path="chat" element={<AiChat />} />

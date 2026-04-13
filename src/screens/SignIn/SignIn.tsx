@@ -3,11 +3,12 @@ import { cn } from '@bem-react/classname'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 
 import type { WithClassName } from '@/types/withClassName'
+import { useAuthStore } from '@/store/auth'
 import { Input, Button, Title, Text, Field } from '#components'
 
 import './SignIn.scss'
@@ -31,18 +32,23 @@ type ISignInForm = z.infer<ReturnType<typeof getSignInSchema>>
 
 export const SignIn: FC<WithClassName> = ({ className }) => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
+  const setToken = useAuthStore((state) => state.setToken)
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
   } = useForm<ISignInForm>({
     resolver: zodResolver(getSignInSchema(t)),
     mode: 'onChange',
   })
 
-  const onSubmit = (data: ISignInForm) => {
+  const onSubmit = async (data: ISignInForm) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     console.log('SignIn submit:', data)
+    setToken('mock_jwt_token_abc123')
+    navigate('/app/profile')
   }
 
   return (
@@ -93,6 +99,7 @@ export const SignIn: FC<WithClassName> = ({ className }) => {
           className={cnSignIn('submit')}
           variant="primary"
           disabled={!isValid}
+          isLoading={isSubmitting}
           size="xl"
         >
           {t('auth.signIn.submit')}

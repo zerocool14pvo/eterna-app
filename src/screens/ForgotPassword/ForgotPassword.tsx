@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import type { FC } from 'react'
 import { cn } from '@bem-react/classname'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -21,13 +21,14 @@ export const ForgotPassword: FC<WithClassName> = ({ className }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
   } = useForm<IForgotForm>({
     resolver: zodResolver(getForgotSchema(t)),
     mode: 'onChange',
   })
 
-  const handleNext = (data: IForgotForm) => {
+  const handleNext = async (data: IForgotForm) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     console.log('ForgotPassword submit:', data)
     navigate('/auth/create-new-password')
   }
@@ -61,6 +62,7 @@ export const ForgotPassword: FC<WithClassName> = ({ className }) => {
         variant="primary"
         size="xl"
         disabled={!isValid}
+        isLoading={isSubmitting}
       >
         {t('auth.forgotPassword.submit')}
       </Button>

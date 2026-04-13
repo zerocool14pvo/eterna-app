@@ -15,6 +15,7 @@ export interface IButtonBaseProps extends WithClassName {
   variant?: ButtonVariant
   size?: ButtonSize
   disabled?: boolean
+  isLoading?: boolean
   fullWidth?: boolean
 }
 
@@ -28,19 +29,23 @@ export const Button = <T extends ElementType = 'button'>({
   variant = 'primary',
   size = 'xl',
   disabled,
+  isLoading,
   fullWidth,
   as,
   ...props
 }: IButtonProps<T>) => {
   const Component = as || 'button'
 
+  const isDisabled = disabled || isLoading
+
   return (
     <Component
-      className={cnButton({ variant, size, disabled, full: fullWidth }, [className])}
-      disabled={disabled}
+      className={cnButton({ variant, size, disabled: isDisabled, loading: isLoading, full: fullWidth }, [className])}
+      disabled={isDisabled}
       {...props}
     >
       {children}
+      {isLoading && <span className={cnButton('spinner')} />}
     </Component>
   )
 }

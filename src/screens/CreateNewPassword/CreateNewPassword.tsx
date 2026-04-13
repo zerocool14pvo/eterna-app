@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import type { FC } from 'react'
 import { cn } from '@bem-react/classname'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -18,13 +18,14 @@ export const CreateNewPassword: FC<WithClassName> = ({ className }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
   } = useForm<ICreatePasswordForm>({
     resolver: zodResolver(getCreatePasswordSchema(t)),
     mode: 'onChange',
   })
 
-  const onSubmit = (data: ICreatePasswordForm) => {
+  const onSubmit = async (data: ICreatePasswordForm) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     console.log('CreateNewPassword submit:', data)
   }
 
@@ -67,6 +68,7 @@ export const CreateNewPassword: FC<WithClassName> = ({ className }) => {
         className={cnCreateNewPassword('submit')}
         variant="primary"
         disabled={!isValid}
+        isLoading={isSubmitting}
         size="xl"
       >
         {t('auth.createNewPassword.submit')}
