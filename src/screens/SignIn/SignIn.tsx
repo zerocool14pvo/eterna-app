@@ -1,15 +1,15 @@
-import type { FC } from 'react'
+import { Button, Field, Input, Text, Title } from '#components'
 import { cn } from '@bem-react/classname'
-import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { Link, useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
+import type { FC } from 'react'
+import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
+import { Link, useNavigate } from 'react-router-dom'
+import { z } from 'zod'
 
-import type { WithClassName } from '@/types/withClassName'
 import { useAuthStore } from '@/store/auth'
-import { Input, Button, Title, Text, Field } from '#components'
+import type { WithClassName } from '@/types/withClassName'
 
 import './SignIn.scss'
 
@@ -17,16 +17,23 @@ const cnSignIn = cn('SignIn')
 
 const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$/
 
-const getSignInSchema = (t: TFunction) => z.object({
-  email: z.string().min(1, t('validation.required', 'Обязательное поле')).email(t('validation.email', 'Неверный формат email')),
-  password: z
-    .string()
-    .min(6, t('validation.minLength', 'Минимум 6 символов'))
-    .regex(
-      passwordRegex,
-      t('validation.passwordComplexity', 'Пароль должен содержать минимум 6 символов, заглавную букву, цифру и спецсимвол')
-    ),
-})
+const getSignInSchema = (t: TFunction) =>
+  z.object({
+    email: z
+      .string()
+      .min(1, t('validation.required', 'Обязательное поле'))
+      .email(t('validation.email', 'Неверный формат email')),
+    password: z
+      .string()
+      .min(6, t('validation.minLength', 'Минимум 6 символов'))
+      .regex(
+        passwordRegex,
+        t(
+          'validation.passwordComplexity',
+          'Пароль должен содержать минимум 6 символов, заглавную букву, цифру и спецсимвол',
+        ),
+      ),
+  })
 
 type ISignInForm = z.infer<ReturnType<typeof getSignInSchema>>
 
@@ -48,11 +55,14 @@ export const SignIn: FC<WithClassName> = ({ className }) => {
     await new Promise((resolve) => setTimeout(resolve, 1000))
     console.log('SignIn submit:', data)
     setToken('mock_jwt_token_abc123')
-    navigate('/app/profile')
+    navigate('/app/energy')
   }
 
   return (
-    <form className={cnSignIn(null, [className])} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={cnSignIn(null, [className])}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className={cnSignIn('header')}>
         <Title variant="h2" className={cnSignIn('title')}>
           {t('auth.signIn.title')}
@@ -83,14 +93,10 @@ export const SignIn: FC<WithClassName> = ({ className }) => {
           />
         </Field>
 
-        <Link
-          to="/auth/forgot-password"
-          className={cnSignIn('link')}
-        >
+        <Link to="/auth/forgot-password" className={cnSignIn('link')}>
           {t('auth.signIn.forgotPassword')}
         </Link>
       </div>
-
 
       <div className={cnSignIn('footer')}>
         <Button
@@ -112,8 +118,6 @@ export const SignIn: FC<WithClassName> = ({ className }) => {
           </Link>
         </div>
       </div>
-
-
     </form>
   )
 }

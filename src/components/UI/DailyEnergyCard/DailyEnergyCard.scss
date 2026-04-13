@@ -1,0 +1,67 @@
+@use 'mixins' as *;
+
+.DailyEnergyCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 385px;
+  border-radius: 20px;
+  border: 1px solid var(--Stroke-Gradient, rgba(255, 255, 255, 0.2));
+  background:
+    url(<path-to-image>) lightgray -22.37px -119.996px / 113.981% 148.808%
+      no-repeat,
+    rgba(238, 238, 238, 0.1);
+
+  &-overlay {
+    background:
+      linear-gradient(180deg, rgba(27, 28, 55, 0) 0%, #0a0a35 100%),
+      linear-gradient(180deg, rgba(27, 28, 55, 0) 0%, #0a0a35 100%),
+      linear-gradient(180deg, rgba(27, 28, 55, 0) 0%, #0a0a35 100%),
+      linear-gradient(180deg, rgba(27, 28, 55, 0) 0%, #0a0a35 100%);
+    // backdrop-filter: blur(2px);
+    position: absolute;
+    bottom: 0;
+    padding: 75px 20px 32px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &-title {
+    color: var(--Labels-Primary---Dark, #fff);
+    text-align: center;
+    font-feature-settings:
+      'liga' off,
+      'clig' off;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.43px;
+
+    span {
+      color: var(--Colors-Light-Purple, #887ce8);
+    }
+  }
+
+  &-description {
+    color: var(--Labels-Secondary---Dark, #6d7388);
+    text-align: center;
+    font-feature-settings: 'case' on;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+  }
+}

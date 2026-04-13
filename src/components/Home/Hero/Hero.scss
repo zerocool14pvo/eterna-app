@@ -60,10 +60,16 @@
     width: 100%;
     margin-top: 24px;
     padding: 0 16px;
-    box-sizing: border-box;
+    overflow: hidden;
   }
 
+  &-card {
+    max-width: 125px;
+    min-width: 125px;
 
-
-
+    &:nth-child(2) {
+      max-width: 175px;
+      min-width: 175px;
+    }
+  }
 }

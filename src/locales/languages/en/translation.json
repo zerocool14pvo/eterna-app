@@ -1,7 +1,20 @@
 {
+  "validation": {
+    "required": "Required field",
+    "email": "Invalid email format",
+    "minLength": "Minimum 6 characters",
+    "passwordComplexity": "Password must be at least 6 characters and contain an uppercase letter, a number, and a special character"
+  },
   "review": {
     "verified": "Verified user",
     "unverified": "Unverified"
+  },
+  "calendar": {
+    "title": "Calendar",
+    "weekdays": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+  },
+  "dailyEnergy": {
+    "unlockReading": "UNLOCK YEARLY READING"
   },
   "auth": {
     "signIn": {

@@ -6,10 +6,8 @@
   position: relative;
   width: 100%;
 
-
-
   &_error {
-    border-color: rgba(255, 84, 84, 0.20);
+    border-color: rgba(255, 84, 84, 0.2);
     /* var(--Stroke-Gradient---red) */
   }
 
@@ -36,13 +34,13 @@
 
   &-field {
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.20);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     background: var(--fill-white-10);
     transition: all 0.2s ease-in-out;
     padding: 16px 16px;
     width: 100%;
     height: 100%;
-    color: var(--Labels-Primary---Dark, #FFF);
+    color: var(--Labels-Primary---Dark, #fff);
     text-align: center;
     font-feature-settings: 'case' on;
     font-size: 15px;
@@ -54,6 +52,10 @@
     &::placeholder {
       color: var(--text);
       /* --Labels-Secondary---Dark (#6D7388) */
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
     }
   }
 

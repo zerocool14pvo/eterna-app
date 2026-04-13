@@ -1,6 +1,44 @@
 .DailyEnergy {
-  padding: 24px 16px;
+  padding: 10px 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &-calendar {
+    margin-bottom: 16px;
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--fills-white-10, rgba(238, 238, 238, 0.1));
+    backdrop-filter: blur(8px);
+  }
+
+  &-list {
+    position: relative;
+  }
+
+  &-unlock {
+    position: absolute;
+    bottom: -40px;
+    right: 15px;
+    z-index: 1;
+  }
 }

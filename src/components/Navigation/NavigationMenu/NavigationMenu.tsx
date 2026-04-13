@@ -1,12 +1,12 @@
-import { type FC } from 'react'
-import { motion } from 'framer-motion'
 import { cn } from '@bem-react/classname'
-import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { useEffect, type FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
-import type { WithClassName } from '@/types/withClassName'
-import { LINKS } from '@/constants/links'
 import { Button } from '#components/UI'
+import { LINKS } from '@/constants/links'
+import type { WithClassName } from '@/types/withClassName'
 
 import './NavigationMenu.scss'
 
@@ -17,8 +17,24 @@ export interface INavigationMenuProps extends WithClassName {
   onClose: () => void
 }
 
-export const NavigationMenu: FC<INavigationMenuProps> = ({ className, isOpen, onClose }) => {
+export const NavigationMenu: FC<INavigationMenuProps> = ({
+  className,
+  isOpen,
+  onClose,
+}) => {
   const { t } = useTranslation()
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   return (
     <motion.div
@@ -29,10 +45,18 @@ export const NavigationMenu: FC<INavigationMenuProps> = ({ className, isOpen, on
       transition={{ type: 'spring', damping: 30, stiffness: 200 }}
     >
       <div className={cnNavigationMenu('nav')}>
-        <a href="#reviews" className={cnNavigationMenu('link')} onClick={onClose}>
+        <a
+          href="#reviews"
+          className={cnNavigationMenu('link')}
+          onClick={onClose}
+        >
           {t('navigation.reviews')}
         </a>
-        <a href="#how-it-works" className={cnNavigationMenu('link')} onClick={onClose}>
+        <a
+          href="#how-it-works"
+          className={cnNavigationMenu('link')}
+          onClick={onClose}
+        >
           {t('navigation.howItWorks')}
         </a>
       </div>

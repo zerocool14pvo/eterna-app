@@ -5,13 +5,15 @@
   width: 100%;
   min-height: 120px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.20); /* var(--Stroke-Gradient) */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* var(--Stroke-Gradient) */
   background: var(--fill-white-10);
   transition: border-color 0.2s ease-in-out;
   padding: 16px;
 
   &_error {
-    border-color: rgba(255, 84, 84, 0.20); /* var(--Stroke-Gradient---red) */
+    border-color: rgba(255, 84, 84, 0.2);
+    /* var(--Stroke-Gradient---red) */
   }
 
   &-field {
@@ -32,6 +34,10 @@
 
     &::placeholder {
       color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
     }
   }
 }

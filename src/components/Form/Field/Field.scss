@@ -14,7 +14,8 @@
   }
 
   &-error {
-    color: #FF3A3A; /* var(--Labels-Red) */
+    color: #ff3a3a;
+    /* var(--Labels-Red) */
     font-family: var(--font-sans);
     font-size: 13px;
     font-style: normal;
@@ -22,6 +23,8 @@
     line-height: normal;
     letter-spacing: -0.408px;
     font-feature-settings: 'case' on;
-    text-align: center;
+    text-align: left;
+    position: relative;
+    z-index: 50;
   }
 }

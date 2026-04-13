@@ -1,20 +1,22 @@
+import { AuthLayout, ProfileLayout } from '#components'
 import { cn } from '@bem-react/classname'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
-import { AuthLayout, ProfileLayout } from '#components'
+import { AiChat } from '#screens/AiChat'
 import { Billing } from '#screens/Billing'
 import { CreateNewPassword } from '#screens/CreateNewPassword'
+import { DailyEnergy } from '#screens/DailyEnergy'
 import { ForgotPassword } from '#screens/ForgotPassword'
 import { Home } from '#screens/Home'
 import { MoneyBack } from '#screens/MoneyBack'
 import { Privacy } from '#screens/Privacy'
+import { Profile } from '#screens/Profile'
 import { SignIn } from '#screens/SignIn'
 import { Terms } from '#screens/Terms'
-import { DailyEnergy } from '#screens/DailyEnergy'
-import { AiChat } from '#screens/AiChat'
-import { Profile } from '#screens/Profile'
 
 import './App.scss'
+
+import { Settings } from './screens/Settings'
 
 const cnApp = cn('App')
 
@@ -37,6 +39,7 @@ export const App = () => (
         <Route path="energy" element={<DailyEnergy />} />
         <Route path="chat" element={<AiChat />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>
   </div>
